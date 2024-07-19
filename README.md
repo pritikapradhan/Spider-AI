@@ -1,16 +1,20 @@
-# Project Name
+# Spider AI
 
- Add short description of project here > 
+This project uses artificial intelligence to tell the user what type of spider is being shown. There are 15 different types of spiders the program is trained to recognize: a black widow, blue tarantula, etc. I made this program because I strongly dislike spiders but also want to know what kind I would be dealing with. Using the 15 most common spiders makes the AI very helpful to me.
 
 ![add image descrition here](direct image link here)
 
 ## The Algorithm
 
-Add an explanation of the algorithm and how it works. Make sure to include details about how the code works, what it depends on, and any other relevant info. Add images or other descriptions for your project here. 
+I retrained an image classification model, resent18, with a dataset of different spider species. When it is used, it uses imagenet.py to classify a given image of a spider.
 
 ## Running this project
 
-1. Add steps for running this project.
-2. Make sure to include any required libraries that need to be installed for your project to run.
+1. Have the jetson inference library downloaded and python3.
+2. Login into your nano.
+3. The dataset I used was https://www.kaggle.com/datasets/gpiosenka/yikes-spiders-15-species so download and unzip it in jetson-inference/python/training/classification
+4. Navigate back to the jetson-inference directory and run the docker by using the docker/run.sh command.
+5. To train the program, run python3 train.py --model-dir=models/spiders data/spiders from inside the docker.
+6. Once it is done traning, you can set up the program with NET=models/spiders and DATASET=data/spiders and finally run imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/spiders/1.jpg black_widow.jpg to test an image.
 
 [View a video explanation here](video link)# Spider-AI
