@@ -2,7 +2,6 @@
 
 This project uses artificial intelligence to tell the user what type of spider is being shown. There are 15 different types of spiders the program is trained to recognize: a black widow, blue tarantula, etc. I made this program because I strongly dislike spiders but also want to know what kind I would be dealing with. Using the 15 most common spiders makes the AI very helpful to me.
 
-![add image descrition here](direct image link here)
 
 ## The Algorithm
 
